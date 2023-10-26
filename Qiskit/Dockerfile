@@ -1,20 +1,21 @@
-FROM centos
-
-RUN yum update -y
-
-RUN dnf install -y gcc
+# FROM centos
+FROM ubuntu
+# RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+# RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+# RUN yum update -y
+RUN apt update
+RUN apt-get install -y gcc
 # RUN dnf install -y python3-devel
 # RUN dnf install -y python3-pip
-RUN yum install -y python3.9 
-RUN dnf install -y git
+RUN apt-get install -y python3 python3-pip
+RUN apt-get install -y git
 
 WORKDIR qiskit
-RUN pip3.9 install --upgrade pip
-RUN pip3.9 install qiskit --user
-RUN pip3.9 install pyscf --user
-RUN pip3.9 install matplotlib --user
-RUN pip3.9 install pylatexenc --user
-RUN /usr/bin/python3.9 -m pip install --upgrade pip
+RUN pip install --upgrade pip
+RUN pip install qiskit --user
+RUN pip install pyscf --user
+RUN pip install matplotlib --user
+RUN pip install pylatexenc --user
 
 RUN echo -e "echo \"\n🔆 Welcome to the Qiskit Docker\"\n" >>~/.bashrc 
 RUN echo -e "echo \"\n🚀 This is the minimum elements to run Qiskit \n\n \"" >>~/.bashrc 
