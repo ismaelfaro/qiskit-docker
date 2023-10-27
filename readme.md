@@ -38,4 +38,4 @@ you can play with Jupyter lab and Qiskit in your browser.
 
 
 # dependecies:
-- OS: Centos
+- OS: Ubuntu
