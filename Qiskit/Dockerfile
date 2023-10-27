@@ -17,7 +17,7 @@ RUN pip install pyscf --user
 RUN pip install matplotlib --user
 RUN pip install pylatexenc --user
 
-RUN echo -e "echo \"\n🔆 Welcome to the Qiskit Docker\"\n" >>~/.bashrc 
-RUN echo -e "echo \"\n🚀 This is the minimum elements to run Qiskit \n\n \"" >>~/.bashrc 
+RUN echo "echo \"\n🔆 Welcome to the Qiskit Docker\"\n" >>~/.bashrc 
+RUN echo "echo \"\n🚀 This is the minimum elements to run Qiskit \n\n \"" >>~/.bashrc 
 
 
